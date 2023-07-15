@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guardar Flores</title>
+    
+</head>
+<body>
+    {%with mensajes=get_flashed_messages()%}
+        {% if mensajes%}
+            {%for msj in mensajes%}
+                <h3>{{msj}}</h3>
+            {%endfor%}
+        {%endif%}
+    {%endwith%}
+
+
+    <br>
+    <br>
+
+    <center><h1>Agregar Un Tipo de Flores</h1></center>
+
+    <form action="/guardar" method="POST">
+
+        <input type="text" name="txtNombre" placeholder="Escribe Nombre">
+        <br>
+        <br>
+        <input type="number" name="txtCantidad" placeholder="Escribe Cantidad">
+        <br>
+        <br>
+        <input type="number" name="txtPrecio" placeholder="Escribe Precio">
+        <br>
+        <br>
+        <button type="submit"> Guardar </button>
+        
+        
+    </form>
+
+    <br>
+    <br>
+    <h1>Tipos de Flores guardadas</h1>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Nombre</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+
+            </tr>
+        </thead>
+        
+        
+        <tbody>
+            {%for alb in listAlbums %}
+                <tr>
+                    <td>{{ alb.0 }}</td>
+                    <td>{{ alb.1 }}</td>
+                    <td>{{ alb.2 }}</td>
+                    <td>{{ alb.3 }}</td>
+                    <td>
+                        <a href="/eliminar/{{ alb.0 }}"> Eliminar</a>
+                        
+
+                    </td>
+                </tr>
+            {%endfor%}
+        </tbody>
+
+
+
+    </table>
+
+</body>
+</html>  

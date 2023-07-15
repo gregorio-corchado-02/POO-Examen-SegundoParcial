@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <br>
+    <h1>Eliminar Registro</h1>
+    <br>
+    <br>
+    <form action="/eliminar/{{album.0}}" method="POST">
+
+        <input type="text" name="txtNombre" value="{{ album.1 }}">
+        <br>
+        <br>
+        <input type="number" name="txtCantidad" value="{{ album.2 }}">
+        <br>
+        <br>
+        <input type="number" name="txtPrecio" value="{{ album.3 }}">
+        <br>
+        <br>
+        <button type="submit"> Eliminar </button>
+        
+        
+    </form>
+    </center>
+</body>
+</html
