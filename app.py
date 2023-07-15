@@ -49,7 +49,7 @@ def eliminar(id):
 def actualizar(id):
     if request.method == 'POST':
         curactualizar = mysql.connection.cursor()
-        curactualizar.execute('delate * from tbflores where ID=%s', (id, ))
+        curactualizar.execute('delete from tbflores where ID=%s', (id, ))
         mysql.connection.commit()
 
     flash('Album Eliminado Correctamente bro')
